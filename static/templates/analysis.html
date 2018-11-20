@@ -1,0 +1,52 @@
+<div class="col-sm-9">
+    <h3>Sentiment Analysis of Reviews</h3>
+  <div class="input-group">
+    <input type="text" ng-change="searchMovies()" ng-model="movieSearchTitle" class="form-control"></input><div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+  </div>
+  <div class="list-group">
+  <a ng-repeat="movie in moviesearch" class="list-group-item" ng-click="rateMovie(movie)" href>
+      <img ng-src="http://img.omdbapi.com/?i={{movie.imdbId}}&apikey=ee8796c8&h=150" />
+      {{movie.title}}
+    </a>
+  </div>
+ 
+  <div id="chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script>
+    $('#chart').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                },
+                title: {
+                    text: ''
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: 'Sentiment Analysis of'+movie.title,
+                    data: [
+                        ['Positive',   45.0],
+                        ['Negative',   26.8],
+                        ['Nuetral',    8.5]
+                    ]
+                }]
+            });
+  </script>
+</div>

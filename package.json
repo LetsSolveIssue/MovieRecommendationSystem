@@ -1,0 +1,29 @@
+{
+  "name": "movies4j",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.12.2",
+    "express": "^4.12.3",
+    "method-override": "^2.3.2",
+    "neo4j": "^2.0.0-RC1",
+    "underscore": "^1.8.2",
+    "bower": "^1.4.1",
+    "morgan": "^1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "prestart": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/citruz/movies4j"
+  },
+  "author": "",
+  "license": " ",
+  "bugs": {
+    "url": "https://github.com/citruz/movies4j/issues"
+  },
+  "homepage": "https://github.com/citruz/movies4j"
+}

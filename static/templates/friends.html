@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css"> 
+<div class="col-sm-9">
+  <h3>Add Friend</h3>
+  <div class="input-group">
+    <input type="text" ng-change="searchFriends()" ng-model="friendSearchName" class="form-control" placeholder="Start typing a name..."></input>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="friend in friendsearch" class="list-group-item" ng-click="addFriend(friend)" href>{{friend.name}}</a>
+  </div>
+  <h3>My Friends</h3>
+  <alert ng-if="friends == null || friends.length == 0" type="info">You don't have any friends yet.</alert>
+  <ul>
+    <li ng-repeat="friend in friends">{{friend.name}} <a ng-click="removeFriend(friend)" href>Remove</a></li>
+  </ul>
+</div>

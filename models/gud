@@ -1,0 +1,23 @@
+{{movie.tit
+	 <input type="text" ng-change="searchMovies()" ng-model="movieSearchTitle" class="form-control" placeholder="Start typing a movie..."></input>
+
+
+	   <a ng-repeat="movie in moviesearch" class="list-group-item" ng-click="getAnalysis(movie)" href>
+      <img ng-src="http://img.omdbapi.com/?i={{movie.imdbId}}&apikey=ee8796c8&h=150" />
+      {{movie.title}}
+      <li ng-class="{active: location.path()=='/analysis'}"><a href="#/analysis">Sentiment Analysis</a></li>
+
+
+
+      ' MATCH (me:User)-[:RATED]->(m:Movie)<-[:DIRECTED]-(d:Director)',
+      '(d)-[:DIRECTED]->(m2:Movie)',
+      'WHERE not (me)-[:RATED]->(m2)',
+ 'return distinct m2 AS movie, count(*) AS count',
+    'Order BY count DESC',
+    'LIMIT 10'
+
+
+    ' MATCH (me:User)-[:RATED]->(m:Movie)<-[:DIRECTED]-(d:Director)-[:DIRECTED]->(m2:Movie)WHERE not (me)-[:RATED]->(m2)',
+ 'return distinct m2 AS movie, count(*) AS count',
+    'Order BY count DESC',
+    'LIMIT 10'

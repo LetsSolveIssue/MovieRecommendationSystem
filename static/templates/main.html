@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css"> 
+<div class="col-sm-9">
+  <h3>Recommendations based on my ratings <button class="btn btn-default" ng-click="getSimilarMovies()"><span class="glyphicon glyphicon-refresh"></span></button></h3>
+
+  <alert ng-if="similarMovies == null || similarMovies.length == 0" type="info">Please rate movies to receive recommendations.</alert>
+  <div movielist movies="similarMovies"></div>
+
+
+  <h3>Recommendations based on my friends <button class="btn btn-default" ng-click="getFriendsMovies()"><span class="glyphicon glyphicon-refresh"></span></button></h3>
+
+  <alert ng-if="friendsMovies == null || friendsMovies.length == 0" type="info">Please add friends to receive recommendations.</alert>
+  <div movielist movies="friendsMovies"></div>
+
+  <h3>Recommendations based on Directors <button class="btn btn-default" ng-click="getDirectorMovies()"><span class="glyphicon glyphicon-refresh"></span></button></h3>
+
+  <alert ng-if="directorMovies == null || directorMovies.length == 0" type="info">Please add movies to receive recommendations.</alert>
+  <div movielist movies="directorMovies"></div>
+
+
+  <h3>Recommendations based on Actors <button class="btn btn-default" ng-click="getActorMovies()"><span class="glyphicon glyphicon-refresh"></span></button></h3>
+
+  <alert ng-if="actorMovies == null || actorMovies.length == 0" type="info">Please add movies to receive recommendations.</alert>
+  <div movielist movies="actorMovies"></div>
+</div>
